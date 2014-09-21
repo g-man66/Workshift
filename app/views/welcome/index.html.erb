@@ -1,0 +1,14 @@
+<h1>WorkShift</h1>
+<p>Site about our working days and tasks</p>
+
+
+<% if user_signed_in? %>
+    <span>Здравствуйте, <%= current_user.email %></span>
+    <%= link_to 'Выйти', destroy_user_session_path, :method => :delete %>
+<% else %>
+    <%= link_to 'Войти', new_user_session_path %> или <%= link_to 'Зарегистрироваться', new_user_registration_path %>
+<% end %>
+
+
+<%= link_to 'Workshift', controller: 'articles' %> <br>
+<%= link_to 'New article', new_article_path %> 
